@@ -40,7 +40,8 @@ Param
     [string]$ClientId,
     [string]$CertificateThumbprint,
     [string]$UserName,
-    [string]$Password
+    [string]$Password,
+    [string]$SitesCsv
 )
 
 Function Connect_Exo
@@ -161,6 +162,13 @@ if($CurrentStart -eq $CurrentEnd)
  Exit
 }
 
+#Load allowed sites from CSV (expects a SiteURL column)
+$AllowedSites=@()
+if($SitesCsv -ne "")
+{
+ $AllowedSites=(Import-Csv -Path $SitesCsv).SiteURL | ForEach-Object { $_.TrimEnd('/').ToLower() }
+}
+
 Connect_EXO
 $AggregateResults = @()
 $CurrentResult= @()
@@ -212,6 +220,13 @@ while($true)
   if($OneDriveOnly.IsPresent -and ($Workload -ne "OneDrive"))
   {
    $PrintFlag="False"
+  }
+
+  #Site filter: include only downloads from sites listed in the CSV
+  if($AllowedSites.Count -gt 0)
+  {
+   if(("$SiteURL").TrimEnd('/').ToLower() -notin $AllowedSites) 
+   { $PrintFlag="False" }
   }
 
   #Export result to csv
