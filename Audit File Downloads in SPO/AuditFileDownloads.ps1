@@ -1,7 +1,7 @@
 ﻿<#
 =============================================================================================
 Name:           Audit File Downloads in SharePoint Online using PowerShell
-Version:        1.0
+Version:        2.0
 Website:        o365reports.com
 
 ~~~~~~~~~~~~~~~~~~
@@ -18,9 +18,16 @@ Script Highlights:
 9. Helps to track SharePoint Online file downloads alone
 10.Tracks OneDrive file downloads alone.
 11.Finds files downloaded by a specific person in the specific period   
-12. Automatically installs the EXO module (if not installed already) upon your confirmation.   
-13. The script is scheduler friendly. i.e., Credentials can be passed as a parameter instead of saved inside the script. 
-14. The script supports Certificate-based Authentication (CBA) too.
+12. Allows to filter file downloads from specific sites.
+13. Automatically installs the EXO module (if not installed already) upon your confirmation.   
+14. The script is scheduler friendly. i.e., Credentials can be passed as a parameter instead of saved inside the script. 
+15. The script supports Certificate-based Authentication (CBA) too.
+
+~~~~~~~~~~~~
+Change Log:
+~~~~~~~~~~~~
+V1.0 (Feb 27, 2024) - File created.
+V2.0 (May 06, 2026) - Added -SitesCsv parameter to filter file downloads from specific sites (sites can be imported via CSV)
 
 For detailed script execution: https://o365reports.com/2024/02/27/audit-file-downloads-in-sharepoint-online-using-powershell/
 ============================================================================================
