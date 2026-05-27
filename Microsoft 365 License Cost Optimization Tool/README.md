@@ -5,10 +5,10 @@ The native admin center shows who holds licenses but not how to optimize them. T
 ***Script Execution:***  
 
 The tool performs the following reporting and management actions. It also automatically generates a log file after each management operation to help track execution status. A sample script execution is shown in the screenshot below.
-![M365 License Cost Optimization Tool](https://blog.admindroid.com//wp-content/uploads/2026/05/license-optimization-tool-1.png)
+![M365 License Cost Optimization Tool](https://blog.admindroid.com//wp-content/uploads/2026/05/license-cost-optimization-tool-1.png) 
 
 
-***Sample Output:***  
+***Sample Outputs:***  
 
 ## Find licensed users who have been inactive for 90 days:
 
